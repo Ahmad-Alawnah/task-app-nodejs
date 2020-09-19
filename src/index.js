@@ -9,7 +9,7 @@ const User = require('./Models/user')
 require('./DB/mongoose.js')
 
 const app = express()
-const port = process.env.port
+const port = process.env.PORT
 
 // app.use((req, res, next) => { //middleware for express to run before route handler
 //     //console.log(req.method)//get, post, etc ...
