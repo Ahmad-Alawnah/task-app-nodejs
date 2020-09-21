@@ -1,14 +1,8 @@
 const express = require('express')
-const jwt = require('jsonwebtoken')
-const multer = require('multer')
 const userRouter = require('./routers/user.js')
 const taskRouter = require('./routers/task')
-const Task = require('./Models/task')
-const User = require('./Models/user')
+const app  = require('./app.js')
 
-require('./DB/mongoose.js')
-
-const app = express()
 const port = process.env.PORT
 
 // app.use((req, res, next) => { //middleware for express to run before route handler
@@ -26,10 +20,6 @@ const port = process.env.PORT
 // app.use((req,res,next) =>{
 //     res.status(503).send('Under maintenance')
 // })
-app.use(express.json()) //auto parse incoming JSON into objects
-app.use(userRouter)
-app.use(taskRouter)
-
 app.listen(port, ()=>{
     console.log('server is up on port ' + port)
 })
